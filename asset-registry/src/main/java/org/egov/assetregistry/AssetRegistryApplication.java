@@ -1,4 +1,4 @@
-package com.example.assetregistry;
+package org.egov.assetregistry;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.example.assetregistry.controller;
+package org.egov.assetregistry.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

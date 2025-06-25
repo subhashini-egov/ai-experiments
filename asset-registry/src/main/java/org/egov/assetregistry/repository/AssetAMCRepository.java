@@ -1,6 +1,6 @@
-package com.example.assetregistry.repository;
+package org.egov.assetregistry.repository;
 
-import com.example.assetregistry.model.AssetAMC;
+import org.egov.assetregistry.model.AssetAMC;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,7 @@
-package com.example.assetregistry.controller;
+package org.egov.assetregistry.controller;
 
-import com.example.assetregistry.model.AssetAMC;
-import com.example.assetregistry.service.AssetAMCService;
+import org.egov.assetregistry.model.AssetAMC;
+import org.egov.assetregistry.service.AssetAMCService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

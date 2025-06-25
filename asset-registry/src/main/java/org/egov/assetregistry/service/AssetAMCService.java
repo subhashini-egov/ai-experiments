@@ -1,7 +1,7 @@
-package com.example.assetregistry.service;
+package org.egov.assetregistry.service;
 
-import com.example.assetregistry.model.AssetAMC;
-import com.example.assetregistry.repository.AssetAMCRepository;
+import org.egov.assetregistry.model.AssetAMC;
+import org.egov.assetregistry.repository.AssetAMCRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

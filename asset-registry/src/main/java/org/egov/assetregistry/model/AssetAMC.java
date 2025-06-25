@@ -1,4 +1,4 @@
-package com.example.assetregistry.model;
+package org.egov.assetregistry.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
