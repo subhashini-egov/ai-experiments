@@ -3,12 +3,14 @@ package org.egov.assetregistry.controller;
 import org.egov.assetregistry.model.Asset;
 import org.egov.assetregistry.service.AssetService;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.UUID;
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1/asset")
@@ -30,8 +32,8 @@ public class AssetController {
     }
 
     @GetMapping("/_search")
-    public ResponseEntity<List<Asset>> search() {
-        return ResponseEntity.ok(service.search());
+    public ResponseEntity<Page<Asset>> search(Pageable pageable) {
+        return ResponseEntity.ok(service.search(pageable));
     }
 
     @PostMapping("/workflow/_update")

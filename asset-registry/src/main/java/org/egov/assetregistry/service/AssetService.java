@@ -2,9 +2,10 @@ package org.egov.assetregistry.service;
 
 import org.egov.assetregistry.model.Asset;
 import org.egov.assetregistry.repository.AssetRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -24,8 +25,8 @@ public class AssetService {
         return assetRepository.save(asset);
     }
 
-    public List<Asset> search() {
-        return assetRepository.findAll();
+    public Page<Asset> search(Pageable pageable) {
+        return assetRepository.findAll(pageable);
     }
 
     public Optional<Asset> get(UUID id) {

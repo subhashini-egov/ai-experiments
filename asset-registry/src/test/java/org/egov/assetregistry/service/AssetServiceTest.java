@@ -9,6 +9,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -51,11 +55,12 @@ class AssetServiceTest {
 
     @Test
     void searchShouldReturnAllAssets() {
+        Pageable pageable = Pageable.unpaged();
         List<Asset> assets = Arrays.asList(asset);
-        when(assetRepository.findAll()).thenReturn(assets);
-        List<Asset> result = assetService.search();
-        assertEquals(assets, result);
-        verify(assetRepository).findAll();
+        when(assetRepository.findAll(pageable)).thenReturn(new PageImpl<>(assets));
+        Page<Asset> result = assetService.search(pageable);
+        assertEquals(assets, result.getContent());
+        verify(assetRepository).findAll(pageable);
     }
 
     @Test
