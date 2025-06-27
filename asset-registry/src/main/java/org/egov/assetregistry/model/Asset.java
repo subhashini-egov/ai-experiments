@@ -48,5 +48,6 @@ public class Asset {
 
     private String wfStatus;
 
-    private Boolean isActive = true;
+    @Column(columnDefinition = "boolean default true")
+    private Boolean isActive;
 }
